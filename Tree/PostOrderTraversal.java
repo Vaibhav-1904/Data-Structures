@@ -40,30 +40,30 @@ public class PostOrderTraversal {
 
     // Iterative using 1 Stack
     // T->O(n)
-public List<Integer> postorderTraversal(Node root) {
-    Stack<Node> stack = new Stack<>();
-    List<Integer> postOrder = new ArrayList<>();
-    if(root == null)
-        return postOrder;
-    Node cur = root;
+    public List<Integer> postorderTraversal(Node root) {
+        Stack<Node> stack = new Stack<>();
+        List<Integer> postOrder = new ArrayList<>();
+        if(root == null)
+            return postOrder;
+        Node cur = root;
 
-    while(cur != null || !stack.isEmpty()){
-        if(cur != null){
-            stack.push(cur);
-            cur = cur.left;
-        }else{
-            Node temp = stack.peek().right;
-            if(temp == null){
-                temp = stack.pop();
-                postOrder.add(temp.data);
-                while(!stack.isEmpty() && stack.peek().right == temp){
+        while(cur != null || !stack.isEmpty()){
+            if(cur != null){
+                stack.push(cur);
+                cur = cur.left;
+            }else{
+                Node temp = stack.peek().right;
+                if(temp == null){
                     temp = stack.pop();
                     postOrder.add(temp.data);
-                }
-            }else
-                cur = temp;
+                    while(!stack.isEmpty() && stack.peek().right == temp){
+                        temp = stack.pop();
+                        postOrder.add(temp.data);
+                    }
+                }else
+                    cur = temp;
+            }
         }
+        return postOrder;
     }
-    return postOrder;
-}
 }
