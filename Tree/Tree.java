@@ -1,6 +1,9 @@
 package DS.Tree;
 
+import java.util.Scanner;
+
 public class Tree {
+    static Scanner scan = new Scanner(System.in);
     public static class Node{
         int data;
         Node left;
@@ -11,10 +14,31 @@ public class Tree {
         }
     }
 
+    public static Node createTree(){
+        Node root = null;
+        System.out.println("Enter Data : ");
+        int data = scan.nextInt();
+
+        if(data == -1)
+            return null;
+
+        root = new Node(data);
+        System.out.println("Enter data for left Node of Node " + data);
+        root.left = createTree();
+
+        System.out.println("Enter data for right Node of Node : " + data);
+        root.right = createTree();
+
+        return root;
+    }
+
     public static void main(String[] args) {
-        Node root = new Node(1);
-        root.left = new Node(2);
-        root.right = new Node(3);
-        root.left.left = new Node(4);
+        Node root = createTree();
+
+        while(root != null)
+        {
+            System.out.println(root.data);
+            root = root.left;
+        }
     }
 }
