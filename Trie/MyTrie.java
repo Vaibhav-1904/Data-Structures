@@ -14,6 +14,7 @@ public class MyTrie {
     }
 
     static class Trie{
+
         TrieNode root;
         Trie(){
             root = new TrieNode();
