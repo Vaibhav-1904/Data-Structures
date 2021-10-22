@@ -1,9 +1,10 @@
 package DS.Queue;
-
+// Cirucular Array
 public class MyQueueUsingArray {
     int[] arr;
-    int front , rear;
-    int size; int count;
+    int front, rear;
+    int size; 
+    int count;
 
     public MyQueueUsingArray(int size){
         this.size = size;

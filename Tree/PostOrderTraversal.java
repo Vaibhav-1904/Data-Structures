@@ -45,12 +45,12 @@ public class PostOrderTraversal {
         List<Integer> postOrder = new ArrayList<>();
         if(root == null)
             return postOrder;
-        Node cur = root;
+        Node node = root;
 
-        while(cur != null || !stack.isEmpty()){
-            if(cur != null){
-                stack.push(cur);
-                cur = cur.left;
+        while(node != null || !stack.isEmpty()){
+            if(node != null){
+                stack.push(node);
+                node = node.left;
             }else{
                 Node temp = stack.peek().right;
                 if(temp == null){
@@ -61,7 +61,7 @@ public class PostOrderTraversal {
                         postOrder.add(temp.data);
                     }
                 }else
-                    cur = temp;
+                    node = temp;
             }
         }
         return postOrder;
