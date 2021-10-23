@@ -15,13 +15,13 @@ public class DFS {
         return dfs;
     }
 
-    void DfsTraversal(int i, ArrayList<ArrayList<Integer>> graph, ArrayList<Integer> dfs, boolean[] visited){
-        visited[i] = true;
-        dfs.add(i);
-        for(Integer j: graph.get(i)){
+    void DfsTraversal(int vertex, ArrayList<ArrayList<Integer>> graph, ArrayList<Integer> dfs, boolean[] visited){
+        visited[vertex] = true;
+        dfs.add(vertex);
+        for(Integer v: graph.get(vertex)){
             // Go to depth of a Node and make sure it is not visited
-            if(!visited[j])
-                DfsTraversal(j, graph, dfs, visited);
+            if(!visited[v])
+                DfsTraversal(v, graph, dfs, visited);
         }
     }
 }
