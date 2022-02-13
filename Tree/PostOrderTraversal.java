@@ -1,5 +1,5 @@
 package DS.Tree;
-import DS.Tree.Tree.Node;
+import DS.Tree.Tree.TreeNode;
 import java.util.*;
 
 // left-right-root
@@ -40,19 +40,19 @@ public class PostOrderTraversal {
 
     // Iterative using 1 Stack
     // T->O(n)
-    public List<Integer> postorderTraversal(Node root) {
-        Stack<Node> stack = new Stack<>();
+    public List<Integer> postorderTraversal(TreeNode root) {
+        Stack<TreeNode> stack = new Stack<>();
         List<Integer> postOrder = new ArrayList<>();
         if(root == null)
             return postOrder;
-        Node node = root;
+        TreeNode treeNode = root;
 
-        while(node != null || !stack.isEmpty()){
-            if(node != null){
-                stack.push(node);
-                node = node.left;
+        while(treeNode != null || !stack.isEmpty()){
+            if(treeNode != null){
+                stack.push(treeNode);
+                treeNode = treeNode.left;
             }else{
-                Node temp = stack.peek().right;
+                TreeNode temp = stack.peek().right;
                 if(temp == null){
                     temp = stack.pop();
                     postOrder.add(temp.data);
@@ -61,7 +61,7 @@ public class PostOrderTraversal {
                         postOrder.add(temp.data);
                     }
                 }else
-                    node = temp;
+                    treeNode = temp;
             }
         }
         return postOrder;

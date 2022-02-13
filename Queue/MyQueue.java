@@ -13,9 +13,9 @@ public class MyQueue<E>{
     }
     private QueueNode<E> head, rear;
 
-    public void enqueue(E data){
+    public void enqueue(E data) {
         QueueNode<E> toAdd = new QueueNode<>(data);
-        if(head == null){
+        if(head == null) {
             rear = head = toAdd;
             return;
         }
@@ -26,7 +26,7 @@ public class MyQueue<E>{
     public QueueNode<E> dequeue() throws Exception{
         if(head == null)
             throw new Exception("Queue is Empty");
-        else if(head == rear){
+        else if(head == rear) {
             QueueNode<E> temp = head;
             head = rear = null;
             return temp;

@@ -2,12 +2,12 @@ package DS.Heap;
 
 public class MaxHeap {
 
-    private int size;
-    private int maxSize;
-    private int[] arr;
+    private static int curSize;
+    private static int maxSize;
+    private static int[] arr;
 
     public MaxHeap(){
-        size = 0;
+        curSize = 0;
         maxSize = 100;
         arr = new int[maxSize + 1];
     }
@@ -35,52 +35,57 @@ public class MaxHeap {
 //    }
 
     // Below insert and heapify operation take O(n) time for inserting n Nodes
-    void insert(int value) throws Exception{
-        if(size > maxSize)
+    static void insert(int value) throws Exception{
+        if(curSize > maxSize)
             throw new Exception("Heap is Full");
-        arr[++size] = value;
-        if(size > 1)
-            heapify(size);
+        arr[++curSize] = value;
+        if(curSize > 1)
+            heapify(curSize);
     }
-    void heapify(int i){
-        int parent = i>>1;
+
+    // parent access of a child -> i / 2
+    // child access of a parent -> 2*i, 2*i + 1
+    static void heapify(int i) {
+        int parent = i >> 1; // i / 2
         
-        if(parent >= 1){
+        if(parent >= 1) {
             if(arr[i] > arr[parent]){
                 int temp = arr[i];
                 arr[i] = arr[parent];
                 arr[parent] = temp;
             }
-
             // Recursively heapify the parent Node.
             heapify(parent);
         }
     }
 
-    public void delete() throws Exception{
-        if(size == 0)
+    public void delete() throws Exception {
+        if(curSize == 0)
             throw new Exception("Heap is Empty");
-        arr[1] = arr[size]; // Bring rightmost element to the top
-        arr[size] = 0;
-        size--;
+        arr[1] = arr[curSize]; // Bring rightmost element to the top
+        arr[curSize] = 0;
+        curSize--;
         int i = 1;
-        while(i < size){
+        //Heapify
+        while(i < curSize) {
             int leftChild = arr[2*i];
             int rightChild = arr[2*i + 1];
             if(arr[i] >= Math.max(leftChild, rightChild))
                 break;
-            int child = (leftChild > rightChild) ? 2*i : 2*i +1;
+            int child = (leftChild > rightChild) ? 2*i : 2*i + 1;
 
             int temp = arr[i];
             arr[i] = arr[child];
             arr[child] = temp;
+
+            i = child;
         }
     }
 
     void printHeap(){
         System.out.println();
-        for(int i = 1; i <= size; i++){
+        for(int i = 1; i <= curSize; i++)
             System.out.print(arr[i] + " ");
-        }
+
     }
 }

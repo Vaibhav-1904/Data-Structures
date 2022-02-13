@@ -1,12 +1,12 @@
 package DS.Tree;
-import DS.Tree.Tree.Node;
+import DS.Tree.Tree.TreeNode;
 import java.util.*;
 
 // Also known as Level Order Traversal
 public class BFSTraversal {
     // T -> O(n)
-    public List<List<Integer>> levelOrder(Node root) {
-        Queue<Node> queue = new LinkedList<>();
+    public List<List<Integer>> levelOrder(TreeNode root) {
+        Queue<TreeNode> queue = new LinkedList<>();
         List<List<Integer>> bfs = new ArrayList<>();
         if(root == null)
             return bfs;
@@ -16,7 +16,7 @@ public class BFSTraversal {
             List<Integer> level = new ArrayList<>();
 
             for(int i = 0; i < levelSize; i++){
-                Node temp = queue.remove();
+                TreeNode temp = queue.remove();
                 if(temp.left != null)
                     queue.add(temp.left);
                 if(temp.right != null)

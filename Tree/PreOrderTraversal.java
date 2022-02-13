@@ -1,5 +1,5 @@
 package DS.Tree;
-import DS.Tree.Tree.Node;
+import DS.Tree.Tree.TreeNode;
 import java.util.*;
 
 // root-left-right
@@ -17,12 +17,12 @@ public class PreOrderTraversal {
 
     // Iterative Approach
     // T -> O(n)   S-> O(n)
-    public List<Integer> preorderTraversal(Node root) {
+    public List<Integer> preorderTraversal(TreeNode root) {
         List<Integer> preOrder = new ArrayList<>();
         if(root == null)
             return preOrder;
 
-        Stack<Node> stack = new Stack<>();
+        Stack<TreeNode> stack = new Stack<>();
         stack.push(root);
 
         while(!stack.isEmpty()){

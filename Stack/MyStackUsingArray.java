@@ -9,7 +9,7 @@ public class MyStackUsingArray{
             arr[++top] = x;
     }
 
-    int pop(){
+    int pop() {
         if(top == -1)
             return -1;
         return arr[top--];

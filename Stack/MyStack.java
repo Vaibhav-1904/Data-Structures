@@ -15,7 +15,7 @@ public class MyStack<E>{
 
     private StackNode<E> head;
 
-    public void push(E e){
+    public void push(E e) {
         StackNode<E> toAdd = new StackNode<>(e);
         if(head == null)
             head = toAdd;

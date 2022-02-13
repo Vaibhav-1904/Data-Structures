@@ -68,13 +68,14 @@ public class MyTrie {
     }
 
     public static void main(String[] args) {
-        List<String> dic = new ArrayList<>();
 
-        dic.add("pqrs");
-        dic.add("psst");
-        dic.add("pptw");
-        dic.add("qqrt");
-        dic.add("pqrs");
+        Trie dic = new Trie();
+
+        dic.insert("pqrs");
+        dic.insert("psst");
+        dic.insert("pptw");
+        dic.insert("qqrt");
+        dic.insert("pqrs");
 
     }
 }

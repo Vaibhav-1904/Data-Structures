@@ -4,9 +4,9 @@ import java.util.*;
 public class BFS {
     // 1 based Indexing
     // T = O(N + E)  ,  S = O(N + N)
-    public ArrayList<Integer> bfsOfGraph(int V, ArrayList<ArrayList<Integer>> graph) {
+    public List<Integer> bfsOfGraph(int V, ArrayList<ArrayList<Integer>> graph) {
         // Adjacency List is already given
-        ArrayList<Integer> bfs = new ArrayList<>();
+        List<Integer> bfs = new ArrayList<>();
         boolean[] visited = new boolean[V + 1];
 
         // Multiple component Dis-Connected Graphs
@@ -17,7 +17,7 @@ public class BFS {
                 q.add(i);
                 visited[i] = true;
                 // Visit every node of a component
-                while(!q.isEmpty()){
+                while(!q.isEmpty()) {
                     Integer current = q.poll();
                     bfs.add(current);
                     // To add every adjacent node of current Node

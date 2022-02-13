@@ -27,7 +27,7 @@ public class MyLinkedList<E>{
         }
     }
 
-    public boolean isEmpty(){
+    public boolean isEmpty() {
         return head == null;
     }
 

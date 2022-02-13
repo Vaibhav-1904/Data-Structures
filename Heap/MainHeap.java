@@ -9,8 +9,9 @@ public class MainHeap {
         max.insert(5);
         max.insert(2);
         max.insert(15);
-        max.insert(4);
+        max.insert(11);
         max.insert(20);
+        max.insert(1);
         max.printHeap();
         max.delete();
         max.printHeap();

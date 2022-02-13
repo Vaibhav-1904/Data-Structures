@@ -6,8 +6,7 @@ public class BSTNode {
         int data;
         public Node(int data){
             this.data = data;
-            left = null;
-            right = null;
+            left = right = null;
         }
     }
 
@@ -25,7 +24,7 @@ public class BSTNode {
     }
 
     // Inorder of BST is in Ascending order
-    static void inOrder(Node root){
+    static void inOrder(Node root) {
         if(root == null)
             return;
 
@@ -34,18 +33,15 @@ public class BSTNode {
         inOrder(root.right);
     }
 
-    static int height(Node root){
+    static int height(Node root) {
         if(root == null)
             return 0;
 
-        int l = height(root.left);
-        int r = height(root.right);
-
-        return 1 + l + r;
+        return 1 + height(root.left) + height(root.right);
     }
 
     // T -> O(n^2), Optimal Method in ImportantQ
-    static boolean isBalanced(Node root){
+    static boolean isBalanced(Node root) {
         if(root == null)
             return true;
 

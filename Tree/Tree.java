@@ -1,28 +1,27 @@
 package DS.Tree;
-
 import java.util.Scanner;
 
 public class Tree {
     static Scanner scan = new Scanner(System.in);
-    public static class Node{
+    public static class TreeNode {
         int data;
-        Node left;
-        Node right;
-        Node(int data){
+        TreeNode left;
+        TreeNode right;
+        TreeNode(int data){
             this.data = data;
             left = right = null;
         }
     }
 
-    public static Node createTree(){
-        Node root = null;
+    public static TreeNode createTree(){
+        TreeNode root = null;
         System.out.println("Enter Data : ");
         int data = scan.nextInt();
 
         if(data == -1)
             return null;
 
-        root = new Node(data);
+        root = new TreeNode(data);
         System.out.println("Enter data for left Node of Node " + data);
         root.left = createTree();
 
@@ -33,7 +32,7 @@ public class Tree {
     }
 
     public static void main(String[] args) {
-        Node root = createTree();
+        TreeNode root = createTree();
 
         while(root != null)
         {
