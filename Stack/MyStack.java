@@ -17,8 +17,10 @@ public class MyStack<E>{
 
     public void push(E e) {
         StackNode<E> toAdd = new StackNode<>(e);
-        if(head == null)
+        if(head == null) {
             head = toAdd;
+            return;
+        }
         toAdd.next = head;
         head = toAdd;
     }

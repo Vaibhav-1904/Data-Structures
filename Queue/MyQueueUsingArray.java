@@ -1,5 +1,5 @@
 package DS.Queue;
-// Cirucular Array
+// Circular Array
 public class MyQueueUsingArray {
     int[] arr;
     int front, rear;
@@ -13,7 +13,7 @@ public class MyQueueUsingArray {
         count = 0;
     }
 
-    public void enqueue(int data) throws Exception{
+    public void enqueue(int data) throws Exception {
         if(count == size)
             throw new Exception("Queue is Full");
 
@@ -22,7 +22,7 @@ public class MyQueueUsingArray {
         count++;
     }
 
-    public int dequeue() throws Exception{
+    public int dequeue() throws Exception {
         if(count == 0) {
             throw new Exception("Queue is Empty");
         }
