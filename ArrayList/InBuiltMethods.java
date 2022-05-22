@@ -1,5 +1,7 @@
 package DS.ArrayList;
 
+import java.util.ArrayList;
+
 public class InBuiltMethods {
 
     // .add(object) -> Adds object in end of list

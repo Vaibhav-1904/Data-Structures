@@ -3,20 +3,20 @@ import java.util.Stack;
 
 public class MyStack<E>{
 
-    public static class StackNode<E>{
+    public static class ListNode<E>{
         E data;
-        StackNode<E> next;
+        ListNode<E> next;
 
-        public StackNode(E data){
+        public ListNode(E data){
             this.data = data;
             next = null;
         }
     }
 
-    private StackNode<E> head;
+    private ListNode<E> head;
 
     public void push(E e) {
-        StackNode<E> toAdd = new StackNode<>(e);
+        ListNode<E> toAdd = new ListNode<>(e);
         if(head == null) {
             head = toAdd;
             return;
@@ -29,7 +29,7 @@ public class MyStack<E>{
         if(head == null){
             throw new Exception("Stack is Empty");
         }
-        StackNode<E> popped = head;
+        ListNode<E> popped = head;
         head = head.next;
 
         return popped.data;
@@ -46,6 +46,7 @@ public class MyStack<E>{
     }
 
     public static void main(String[] args) {
+
         Stack<Integer> s = new Stack<>();
     }
 }

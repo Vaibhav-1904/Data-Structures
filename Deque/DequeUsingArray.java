@@ -1,14 +1,14 @@
 package DS.Deque;
 
 public class DequeUsingArray {
+    // Circular Array
     int[] arr;
     int  front;
     int  rear;
     int  size;
     int count;
 
-    public DequeUsingArray(int size)
-    {
+    public DequeUsingArray(int size) {
         arr = new int[size];
         front = -1;
         rear = 0;

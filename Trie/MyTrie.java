@@ -20,7 +20,7 @@ public class MyTrie {
             root = new TrieNode();
         }
 
-        void insert(String word){
+        void insert(String word) {
             int i = 0;
             TrieNode current = root;
             while(i < word.length()){
@@ -33,7 +33,7 @@ public class MyTrie {
             }
             current.end = true; // setting the last character of any word to true to mark end of a word.
         }
-        boolean search(String word){
+        boolean search(String word) {
             int i = 0;
             TrieNode current = root;
             while(i < word.length()) {
@@ -69,13 +69,13 @@ public class MyTrie {
 
     public static void main(String[] args) {
 
-        Trie dic = new Trie();
-
-        dic.insert("pqrs");
-        dic.insert("psst");
-        dic.insert("pptw");
-        dic.insert("qqrt");
-        dic.insert("pqrs");
+//        Trie dictionary = new Trie();
+//
+//        dictionary.insert("pqrs");
+//        dictionary.insert("psst");
+//        dictionary.insert("pptw");
+//        dictionary.insert("qqrt");
+//        dictionary.insert("pqrs");
 
     }
 }

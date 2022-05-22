@@ -26,7 +26,6 @@ public class MyDeque<E> {
         head.pre = toAdd;
         toAdd.next = head;
         head = toAdd;
-
     }
 
     public void addToTail(E data){

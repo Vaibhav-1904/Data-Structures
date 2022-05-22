@@ -45,9 +45,9 @@ public class MyLinkedList<E>{
         if(index == 0)
             head = head.next;
         else{
-            for(int i = 0; i < index - 1; i++){
+            for(int i = 0; i < index - 1; i++)
                 temp = temp.next;
-            }
+
             temp.next = temp.next.next; // Assign null if last element
         }
     }
@@ -74,16 +74,16 @@ public class MyLinkedList<E>{
 //        return rev;
 //    }
 
-    public MyLinkedList<E> reverse(Node<E> h){
-        Node<E> newHead = null;
+    public MyLinkedList<E> reverse(Node<E> head) {
         MyLinkedList<E> rev = new MyLinkedList<>();
-        
-        while(h != null){
-            Node<E> next = h.next;
-            h.next = newHead;
-            newHead = h;
+
+        Node<E> newHead = null;
+        while(head != null){
+            Node<E> next = head.next;
+            head.next = newHead;
+            newHead = head;
             rev.add(newHead.data);
-            h = next;
+            head = next;
         }
         rev.head = newHead;
         return rev;
@@ -91,7 +91,7 @@ public class MyLinkedList<E>{
 
 
     // For Stack Implementations
-    public E removeTop(){
+    public E removeTop() {
         Node<E> toRemove = head;
         head = head.next;
         return toRemove.data;
